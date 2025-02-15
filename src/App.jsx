@@ -1,16 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Advice from "./advice";
+import axios from "axios";
+import Typewriter from "react-typewriter-effect"; 
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [advice, setAdvice] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-  return (
-    <>
-      <h1 className='text-3xl'>hello world</h1>
-    </>
-  )
+    const fetchAdvice = async () => {
+        setLoading(true);
+        setError(null);
+        try {
+            const res = await axios.get("https://api.adviceslip.com/advice");
+            setAdvice(res.data.slip.advice);
+        } catch (err) {
+            setError("Failed to fetch advice. Try again!");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchAdvice();
+    }, []);
+
+    return (
+        <>
+        <div className="flex flex-col items-center gap-4 p-6 mt-36">
+        <Typewriter
+                text="Advice Generator&nbsp;"
+                textStyle={{ fontSize: "7rem", color: "#1f2937", fontWeight: "bold" }}
+                startDelay={300}
+                typeSpeed={100}
+                cursorColor="#1f2937"
+            />
+            <Advice advice={advice} loading={loading} error={error} />
+            <button 
+                onClick={fetchAdvice} 
+                disabled={loading} 
+                className="px-4 py-3 bg-orange-500 text-slate-50 rounded-md text-lg hover:bg-orange-600 disabled:bg-gray-500"
+            >
+                {loading ? "Fetching..." : "Get New Advice"}
+            </button>
+        </div>
+        </>
+    );
 }
 
-export default App
+export default App;
