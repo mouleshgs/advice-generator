@@ -39,8 +39,9 @@ function App() {
             <button 
                 onClick={fetchAdvice} 
                 disabled={loading} 
-                className="px-4 py-3 bg-orange-500 text-slate-50 rounded-md text-lg hover:bg-orange-600 disabled:bg-gray-500"
-            >
+    className="px-4 py-3 bg-orange-500 border-b-4 border-orange-700 text-slate-50 rounded-md shadow-xl text-lg 
+               hover:bg-orange-600 active:translate-y-0.5 active:shadow-md disabled:bg-gray-500 cursor-pointer transition-all duration-200 ease-in-out"
+>
                 {loading ? "Fetching..." : "Get New Advice"}
             </button>
         </div>
