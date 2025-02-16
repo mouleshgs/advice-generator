@@ -27,14 +27,16 @@ function App() {
 
     return (
         <>
-        <div className="flex flex-col items-center gap-4 p-6 mt-36">
+        <div className="flex flex-col items-center gap-4 p-6 mt-36 text-center">
+        <div className="!text-sm">
         <Typewriter
                 text="Advice Generator&nbsp;"
-                textStyle={{ fontSize: "7rem", color: "#1f2937", fontWeight: "bold" }}
+                textStyle={{ fontSize: "6rem", color: "#1f2937", fontWeight: "bold" }}
                 startDelay={300}
                 typeSpeed={100}
                 cursorColor="#1f2937"
             />
+            </div>
             <Advice advice={advice} loading={loading} error={error} />
             <button 
                 onClick={fetchAdvice} 
