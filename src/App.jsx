@@ -33,7 +33,7 @@ function App() {
                 text="Advice Generator&nbsp;"
                 textStyle={{ fontSize: "6rem", color: "#1f2937", fontWeight: "bold" }}
                 startDelay={300}
-                typeSpeed={100}
+                typeSpeed={90}
                 cursorColor="#1f2937"
             />
             </div>
