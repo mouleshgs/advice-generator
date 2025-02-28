@@ -31,7 +31,7 @@ function App() {
         <div className="">
         <Typewriter
                 text="Advice Generator"
-                textStyle={{ fontSize: "clamp(3rem, 5vw, 6rem)", color: "#1f2937", fontWeight: "bold" }}
+                textStyle={{ fontSize: "clamp(3rem, 6vw, 6rem)", color: "#1f2937", fontWeight: "bold" }}
                 startDelay={300}
                 typeSpeed={100}
                 cursorColor="#1f2937"
