@@ -28,10 +28,10 @@ function App() {
     return (
         <>
         <div className="flex flex-col items-center gap-4 p-6 mt-36 text-center">
-        <div className="!text-sm">
+        <div className="">
         <Typewriter
-                text="Advice Generator&nbsp;"
-                textStyle={{ fontSize: "6rem", color: "#1f2937", fontWeight: "bold" }}
+                text="Advice Generator"
+                textStyle={{ fontSize: "clamp(3rem, 5vw, 6rem)", color: "#1f2937", fontWeight: "bold" }}
                 startDelay={300}
                 typeSpeed={100}
                 cursorColor="#1f2937"
