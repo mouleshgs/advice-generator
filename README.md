@@ -19,7 +19,7 @@ Welcome to the **Advice Generator**! This is a simple web application built with
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/mouleshleo/advice-generator.git
+   git clone https://github.com/mouleshgs/advice-generator.git
    ```
    
 2. **Navigate to the Project Directory**:
